@@ -1,3 +1,5 @@
+Что было разработано?
+
 ![image](https://github.com/user-attachments/assets/02c9a7ed-7f6a-4a43-b574-9effe15febaa)
 
 Графы:
