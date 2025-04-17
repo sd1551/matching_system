@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/02c9a7ed-7f6a-4a43-b574-9effe15febaa)# matching_system
+![image](https://github.com/user-attachments/assets/02c9a7ed-7f6a-4a43-b574-9effe15febaa)
 
 Графы:
 
@@ -11,7 +11,7 @@
 
 UI и работа приложения:
 
-Страница Login/Register
+Страница login/register
 
 ![image](https://github.com/user-attachments/assets/90c92cfc-5f6d-4617-bdec-4b6098c3782e)
 =========================================================================================
