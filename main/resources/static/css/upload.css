@@ -1,0 +1,223 @@
+:root {
+    --primary: #4361ee;
+    --primary-dark: #3a0ca3;
+    --secondary: #3f37c9;
+    --accent: #4895ef;
+    --light: #f8f9fa;
+    --dark: #212529;
+    --gray: #6c757d;
+    --success: #4cc9f0;
+    --danger: #f72585;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+    --radius: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: var(--dark);
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Общие стили (как в hub) */
+header, .sidebar, footer {
+    /* Стили из hub.css */
+}
+
+/* Основное содержимое */
+main {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 200px);
+}
+
+.upload-container {
+    width: 100%;
+    max-width: 600px;
+    animation: fadeIn 0.5s ease;
+}
+
+.upload-card {
+    background: white;
+    border-radius: var(--radius);
+    padding: 40px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    text-align: center;
+}
+
+.upload-header {
+    margin-bottom: 30px;
+}
+
+.upload-header i {
+    font-size: 3rem;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.upload-header h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: var(--dark);
+}
+
+.upload-header p {
+    color: var(--gray);
+    font-size: 1rem;
+}
+
+.upload-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.file-drop-area {
+    border: 2px dashed var(--primary);
+    border-radius: var(--radius);
+    padding: 40px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.file-drop-area:hover {
+    background: rgba(67, 97, 238, 0.05);
+    border-color: var(--primary-dark);
+}
+
+.file-drop-area i {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.file-drop-area p {
+    margin-bottom: 15px;
+    color: var(--dark);
+}
+
+.file-label {
+    display: inline-block;
+    padding: 10px 20px;
+    background: var(--primary);
+    color: white;
+    border-radius: var(--radius);
+    font-weight: 600;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.file-label:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+#fileInput {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.file-info {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: var(--gray);
+    font-style: italic;
+}
+
+.upload-btn {
+    padding: 15px;
+    border: none;
+    border-radius: var(--radius);
+    background: var(--primary);
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.upload-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+}
+
+.upload-btn i {
+    font-size: 1.2rem;
+}
+
+.message {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: var(--radius);
+    font-size: 0.9rem;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.message.success {
+    background: rgba(76, 201, 240, 0.2);
+    color: var(--success);
+    opacity: 1;
+}
+
+.message.error {
+    background: rgba(247, 37, 133, 0.2);
+    color: var(--danger);
+    opacity: 1;
+}
+
+/* Эффект при перетаскивании файла */
+.file-drop-area.highlight {
+    background: rgba(67, 97, 238, 0.1);
+    border-color: var(--accent);
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .upload-card {
+        padding: 30px 20px;
+    }
+
+    .upload-header i {
+        font-size: 2.5rem;
+    }
+
+    .upload-header h2 {
+        font-size: 1.5rem;
+    }
+}

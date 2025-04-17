@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Создание вакансии</title>
+    <link rel="stylesheet" href="/css/create.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Создать новую вакансию</h1>
+        <button id="backBtn">Вернуться в hub</button>
+    </header>
+
+    <main>
+        <form id="vacancyForm">
+            <div class="form-group">
+                <label for="title">Название:</label>
+                <input type="text" id="title" required>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Описание:</label>
+                <textarea id="description" rows="5"></textarea>
+            </div>
+
+            <div class="skills-section">
+                <h3>Hard Skills</h3>
+                <div class="skill-input">
+                    <input type="text" id="hardSkillInput" placeholder="Search or add hard skill">
+                    <button type="button" id="addHardSkillBtn">Добавить</button>
+                </div>
+                <div id="hardSkillsList" class="skills-list"></div>
+                <div id="hardSkillsSuggestions" class="suggestions"></div>
+            </div>
+
+            <div class="skills-section">
+                <h3>Soft Skills</h3>
+                <div class="skill-input">
+                    <input type="text" id="softSkillInput" placeholder="Search or add soft skill">
+                    <button type="button" id="addSoftSkillBtn">Добавить</button>
+                </div>
+                <div id="softSkillsList" class="skills-list"></div>
+                <div id="softSkillsSuggestions" class="suggestions"></div>
+            </div>
+
+            <button type="submit" id="submitBtn">Создать вакансию</button>
+        </form>
+    </main>
+</div>
+
+<script src="/js/auth.js"></script>
+<script src="/js/create.js"></script>
+</body>
+</html>

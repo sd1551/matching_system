@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Загрузка документов</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/upload.css">
+    <link rel="stylesheet" href="/css/sidebar.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <button class="menu-btn" id="menuBtn">
+            <i class="fas fa-bars"></i>
+        </button>
+        <h1>Загрузка документов</h1>
+        <button id="logoutBtn">
+            <i class="fas fa-sign-out-alt"></i> Выйти
+        </button>
+    </header>
+
+    <!-- Боковое меню -->
+    <div class="sidebar" id="sidebar">
+        <nav>
+            <ul class="sidebar-nav">
+                <li><a href="/hub"><i class="fas fa-home"></i> Главная</a></li>
+                <li><a href="/documents"><i class="fas fa-file-alt"></i> Мои документы</a></li>
+                <li><a href="/auth/upload" class="active"><i class="fas fa-upload"></i> Загрузить</a></li>
+                <li><a href="/compare" class="admin-only"><i class="fas fa-code-compare"></i> Сравнить</a></li>
+                <li><a href="/vacancies/create" class="admin-only"><i class="fas fa-briefcase"></i> Создать вакансию</a></li>
+                <li><a href="/vacancies"><i class="fas fa-briefcase"></i> Вакансии</a></li>
+                <li><a href="/profile"><i class="fas fa-user"></i> Профиль</a></li>
+                <li><a href="/settings"><i class="fas fa-cog"></i> Настройки</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <main>
+        <div class="upload-container">
+            <div class="upload-card">
+                <div class="upload-header">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <h2>Загрузить документ</h2>
+                    <p>Выберите файл для загрузки в ваше хранилище</p>
+                </div>
+
+                <form id="uploadForm" class="upload-form">
+                    <div class="file-drop-area" id="dropArea">
+                        <i class="fas fa-file-upload"></i>
+                        <p>Перетащите файл сюда или</p>
+                        <label for="fileInput" class="file-label">Выберите файл</label>
+                        <input type="file" id="fileInput" name="file" required>
+                        <div class="file-info" id="fileInfo">Файл не выбран</div>
+                    </div>
+                    <button type="submit" class="upload-btn">
+                        <i class="fas fa-upload"></i> Загрузить
+                    </button>
+                </form>
+                <div id="message" class="message"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Текущий пользователь: <span id="username"></span></p>
+    </footer>
+</div>
+
+<script src="/js/auth.js"></script>
+<script src="/js/upload.js"></script>
+<script src="/js/sidebar.js"></script>
+</body>
+</html>

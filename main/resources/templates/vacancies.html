@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вакансии</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/vacancies.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <button class="menu-btn" id="menuBtn">
+            <i class="fas fa-bars"></i>
+        </button>
+        <h1>Вакансии</h1>
+        <div class="header-actions">
+            <button id="createVacancyBtn" class="btn-primary admin-only">
+                <i class="fas fa-plus"></i> Создать вакансию
+            </button>
+            <button id="logoutBtn" class="btn-secondary">
+                <i class="fas fa-sign-out-alt"></i> Выйти
+            </button>
+        </div>
+    </header>
+
+    <!-- Боковое меню -->
+    <div class="sidebar" id="sidebar">
+        <nav>
+            <ul class="sidebar-nav">
+                <li><a href="/hub"><i class="fas fa-home"></i> Главная</a></li>
+                <li><a href="/documents"><i class="fas fa-file-alt"></i> Мои документы</a></li>
+                <li><a href="/auth/upload"><i class="fas fa-upload"></i> Загрузить</a></li>
+                <li><a href="/compare" class="admin-only"><i class="fas fa-code-compare"></i> Сравнить</a></li>
+                <li><a href="/vacancies/create" class="admin-only"><i class="fas fa-briefcase"></i> Создать вакансию</a></li>
+                <li><a href="/vacancies" class="active"><i class="fas fa-briefcase"></i> Вакансии</a></li>
+                <li><a href="/profile"><i class="fas fa-user"></i> Профиль</a></li>
+                <li><a href="/settings"><i class="fas fa-cog"></i> Настройки</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <main>
+        <div class="vacancies-container">
+            <div class="search-filter">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Поиск вакансий...">
+                </div>
+                <div class="filter-dropdown">
+                    <select id="filterSelect">
+                        <option value="all">Все вакансии</option>
+                        <option value="my">Мои вакансии</option>
+                        <option value="recent">Свежие</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="vacancies-list" id="vacanciesList">
+                <!-- Вакансии будут загружены через JavaScript -->
+                <div class="vacancy-card">
+                    <div class="vacancy-header">
+                        <div class="vacancy-title">Frontend разработчик</div>
+                        <div class="vacancy-meta">
+                            <span class="vacancy-date">12.05.2023</span>
+                            <span class="vacancy-status active">Активна</span>
+                        </div>
+                    </div>
+                    <div class="vacancy-author">Опубликовано: Иван Иванов</div>
+                    <div class="vacancy-description">
+                        Ищем опытного Frontend разработчика для работы над современными веб-приложениями.
+                        Требуется знание React, TypeScript и современных подходов к разработке.
+                    </div>
+                    <div class="skills-container">
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">HTML/CSS</span>
+                    </div>
+                    <div class="documents-container">
+                        <div class="documents-title">Прикрепленные документы:</div>
+                        <div class="document-item">
+                            <span class="document-name"><i class="fas fa-file-pdf"></i> Требования.pdf</span>
+                            <button class="document-action"><i class="fas fa-download"></i></button>
+                        </div>
+                    </div>
+                    <div class="vacancy-actions">
+                        <button class="attach-btn"><i class="fas fa-paperclip"></i> Прикрепить документ</button>
+                        <button class="delete-btn admin-only"><i class="fas fa-trash"></i> Удалить</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Модальное окно для прикрепления документов -->
+    <div class="modal" id="attachDocumentModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Прикрепить документ</h2>
+            <div class="documents-list" id="availableDocumentsList">
+                <div class="document-select-item">
+                    <span>Техническое задание.pdf</span>
+                    <button class="attach-doc-btn">Прикрепить</button>
+                </div>
+                <div class="document-select-item">
+                    <span>Описание проекта.docx</span>
+                    <button class="attach-doc-btn attached"><i class="fas fa-check"></i> Прикреплен</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Текущий пользователь: <span id="username"></span></p>
+    </footer>
+</div>
+
+<script src="/js/auth.js"></script>
+<script src="/js/vacancies.js"></script>
+</body>
+</html>

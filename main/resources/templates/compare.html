@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сравнение резюме</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/compare.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Сравнение резюме</h1>
+        <button id="backBtn" class="btn-secondary"><i class="fas fa-arrow-left"></i> Назад</button>
+    </header>
+
+    <div id="selectionPhase">
+        <h2>Выберите вакансию для сравнения</h2>
+        <div id="vacanciesList" class="vacancies-container"></div>
+    </div>
+
+    <div id="resultsPhase" style="display: none;">
+        <div class="header-row">
+            <h2 id="vacancyTitle"></h2>
+            <button id="sendAllBtn" class="btn-primary send-btn"><i class="fas fa-paper-plane"></i> Отправить все</button>
+        </div>
+
+        <div class="admin-notes-container">
+            <h3>Заметки администратора</h3>
+            <textarea id="adminNotes" placeholder="Добавьте общие заметки по сравнению..."></textarea>
+            <button id="saveNotesBtn" class="btn-secondary">Сохранить заметки</button>
+        </div>
+
+        <div id="comparisonResults" class="results-grid"></div>
+    </div>
+
+    <div id="loadingOverlay">
+        <div class="spinner"></div>
+        <p>Анализируем резюме...</p>
+    </div>
+</div>
+
+<script src="/js/auth.js"></script>
+<script src="/js/compare.js"></script>
+</body>
+</html>

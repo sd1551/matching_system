@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Рабочий центр</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/hub.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <button class="menu-btn" id="menuBtn">
+            <i class="fas fa-bars"></i>
+        </button>
+        <h1>Рабочий центр</h1>
+        <button id="logoutBtn">
+            <i class="fas fa-sign-out-alt"></i> Выйти
+        </button>
+    </header>
+
+    <!-- Боковое меню -->
+    <div class="sidebar" id="sidebar">
+        <nav>
+            <ul class="sidebar-nav">
+                <li><a href="/hub" class="active"><i class="fas fa-home"></i> Главная</a></li>
+                <li><a href="/documents"><i class="fas fa-file-alt"></i> Мои документы</a></li>
+                <li><a href="/auth/upload"><i class="fas fa-upload"></i> Загрузить</a></li>
+                <li><a href="/compare" class="admin-only"><i class="fas fa-code-compare"></i> Сравнить</a></li>
+                <li><a href="/vacancies/create" class="admin-only"><i class="fas fa-briefcase"></i> Создать вакансию</a></li>
+                <li><a href="/vacancies"><i class="fas fa-briefcase"></i> Вакансии</a></li>
+                <li><a href="/profile"><i class="fas fa-user"></i> Профиль</a></li>
+                <li><a href="/settings"><i class="fas fa-cog"></i> Настройки</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <main>
+        <div class="actions">
+            <!-- Сохраняем оригинальные id кнопок, но в виде карточек -->
+            <div class="action-card" id="uploadBtn">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <h3>Загрузить документ</h3>
+                <p>Загрузите новые файлы в ваше хранилище</p>
+            </div>
+
+            <div class="action-card" id="viewDocsBtn">
+                <i class="fas fa-folder-open"></i>
+                <h3>Мои документы</h3>
+                <p>Просмотр и управление вашими документами</p>
+            </div>
+
+            <div class="action-card admin-only" id="compareBtn">
+                <i class="fas fa-file-code"></i>
+                <h3>Сравнить документы</h3>
+                <p>Сравнение разных версий документов</p>
+            </div>
+
+            <div class="action-card admin-only" id="createVacancyBtn">
+                <i class="fas fa-user-tie"></i>
+                <h3>Создать вакансию</h3>
+                <p>Публикация новых вакансий</p>
+            </div>
+
+            <div class="action-card" id="viewVacanciesBtn">
+                <i class="fas fa-briefcase"></i>
+                <h3>Мои вакансии</h3>
+                <p>Просмотр и управление вакансиями</p>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>Текущий пользователь: <span id="username"></span></p>
+    </footer>
+</div>
+
+<script src="/js/auth.js"></script>
+<script src="/js/hub.js"></script>
+</body>
+</html>

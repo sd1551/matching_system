@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мои документы</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/documents.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <button class="menu-btn" id="menuBtn">
+            <i class="fas fa-bars"></i>
+        </button>
+        <h1>Документы</h1>
+        <div class="header-actions">
+            <button id="backBtn">
+                <i class="fas fa-arrow-left"></i> Назад
+            </button>
+            <button id="logoutBtn">
+                <i class="fas fa-sign-out-alt"></i> Выйти
+            </button>
+        </div>
+    </header>
+
+    <!-- Фильтры -->
+    <div class="filters" id="adminFilters">
+        <div class="filter-group">
+            <label for="usernameFilter"><i class="fas fa-user"></i> Пользователь:</label>
+            <input type="text" id="usernameFilter" placeholder="Фильтр по имени">
+        </div>
+        <div class="filter-group">
+            <label for="dateFilter"><i class="fas fa-calendar"></i> Дата:</label>
+            <input type="date" id="dateFilter">
+        </div>
+        <button id="applyFilters">
+            <i class="fas fa-filter"></i> Применить
+        </button>
+    </div>
+
+    <main>
+        <div class="documents-list" id="documents-list">
+            <!-- Документы будут загружены здесь -->
+        </div>
+
+        <!-- Пагинация -->
+        <div class="pagination">
+            <button id="prevPage" disabled>
+                <i class="fas fa-chevron-left"></i> Назад
+            </button>
+            <span id="pageInfo">Страница 1</span>
+            <button id="nextPage">
+                Вперед <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </main>
+
+    <footer>
+        <p>Текущий пользователь: <span id="username"></span></p>
+    </footer>
+</div>
+
+<script src="/js/auth.js"></script>
+<script src="/js/documents.js"></script>
+</body>
+</html>
