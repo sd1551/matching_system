@@ -1,8 +1,5 @@
 ![image](https://github.com/user-attachments/assets/02c9a7ed-7f6a-4a43-b574-9effe15febaa)# matching_system
 
-
-Система для упрощения подбора сотрудников с применением ИИ
-
 Графы:
 
 ![image](https://github.com/user-attachments/assets/5d416238-8714-4ed9-b0d5-94d965ba2988)
